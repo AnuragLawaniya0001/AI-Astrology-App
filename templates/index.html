@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Astrologer</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .box { max-width: 500px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; }
+        input, textarea { width: 100%; margin: 8px 0; padding: 8px; }
+        button { padding: 10px; background: purple; color: white; border: none; border-radius: 5px; }
+        h2 { color: darkblue; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>AI Astrologer</h2>
+        <form method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="date" name="birth_date" required>
+            <input type="time" name="birth_time" required>
+            <input type="text" name="birth_place" placeholder="Birth Place" required>
+            <textarea name="question" placeholder="Ask one astrology question (optional)"></textarea>
+            <button type="submit">Get Reading</button>
+        </form>
+
+        {% if reading %}
+            <h3>Astrology Reading:</h3>
+            <p>{{ reading }}</p>
+        {% endif %}
+
+        {% if qna %}
+            <h3>Your Question Answer:</h3>
+            <p>{{ qna }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
